@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./components/Landing";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import AdminDashboard from "./components/AdminDashboard";
+import TeachersDashboard from "./components/TeachersDashboard";
+import SeriesInvigilation from "./components/SeriesInvigilation";
+import SeatingArrangement from "./components/SeatingArrangement";
+import StudentDashboard from "./components/StudentDashboard";
+import StudentsManagement  from "./components/StudentsManagement";
+import FacultyManagement  from "./components/FacultyManagement";
+// import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        <Route path="/TeachersDashboard" element={<TeachersDashboard />} />
+        <Route path="/SeriesInvigilation" element={<SeriesInvigilation />} />
+        <Route path="/StudentDashboard" element={<StudentDashboard />} />
+        { <Route path="/Register" element={<Register />} /> }
+    <Route path="/SeatingArrangement" element={<SeatingArrangement />} />
+    <Route path="/StudentsManagement" element={<StudentsManagement />} /> 
+     <Route path="/FacultyManagement" element={<FacultyManagement />} />
+    {/* <Route path="/reports" element={<Reports />} />  */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
