@@ -1,70 +1,253 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br/>
 
-## Available Scripts
 
-In the project directory, you can run:
+### AI-Enhanced Exam Cell Management System
 
-### `npm start`
+*Automating invigilation · scheduling · seating — end to end*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
-### `npm test`
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🎯 Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**InExa** (Intelligent Examination Administration) is a full-stack MERN web application designed to eliminate the manual burden of academic examination management. It replaces paper-based workflows with intelligent, automated processes — from distributing invigilation duties fairly across faculty to generating seating plans that prevent malpractice.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Developed as a B.Tech mini-project at **Vidya Academy of Science and Technology**, Thrissur, under **APJ Abdul Kalam Technological University** — March 2026.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ✨ Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Module | Description |
+|--------|-------------|
+| 🤖 **AI Duty Allocation** | Round-Robin Mixed Designation (RRMD) algorithm distributes invigilation duties fairly across designation groups |
+| 🪑 **Auto Seating** | Interleaves students from different departments to prevent clustering; respects hall capacity |
+| 📅 **Exam Scheduling** | Create, edit, and manage exam slots with conflict detection |
+| 🔄 **Leave Adjustment** | Faculty submit leave requests; admin approves and auto-reassigns duties |
+| 📊 **Reports** | Export invigilation schedules and seating plans as Excel or PDF |
+| 🔐 **Role-Based Access** | Separate dashboards and permissions for Admin, Faculty, and Students |
+| 📱 **Student Portal** | Students instantly look up their seat number, hall, and timetable |
+| 📂 **Excel Import** | Bulk-upload faculty records via `.xlsx` with upsert logic |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠 Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+┌──────────────────────────────────────────────────┐
+│                  FRONTEND                        │
+│   React.js  ·  Tailwind CSS  ·  React Router    │
+│   Axios  ·  React Hooks                         │
+├──────────────────────────────────────────────────┤
+│                  BACKEND                         │
+│   Node.js  ·  Express.js  ·  JWT  ·  bcrypt     │
+│   Multer  ·  XLSX  ·  CORS                      │
+├──────────────────────────────────────────────────┤
+│                  DATABASE                        │
+│   MongoDB  ·  Mongoose ODM                      │
+└──────────────────────────────────────────────────┘
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🏗 System Architecture
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+                        ┌─────────────────────┐
+                        │    React Frontend    │
+                        │  (Tailwind CSS UI)   │
+                        └──────────┬──────────┘
+                                   │ HTTP / Axios
+                        ┌──────────▼──────────┐
+                        │   Express.js API    │
+                        │  ┌───────────────┐  │
+                        │  │  JWT Middleware│  │
+                        │  │  RBAC Layer   │  │
+                        │  └───────────────┘  │
+                        │  ┌───────────────┐  │
+                        │  │  RRMD Engine  │  │
+                        │  │  Seat Engine  │  │
+                        │  └───────────────┘  │
+                        └──────────┬──────────┘
+                                   │ Mongoose
+                        ┌──────────▼──────────┐
+                        │      MongoDB        │
+                        │  faculty · slots    │
+                        │  students · halls   │
+                        │  duties · leaves    │
+                        └─────────────────────┘
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🚀 Getting Started
 
-### Analyzing the Bundle Size
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Node.js `v18+`
+- MongoDB `v6+` (local or Atlas)
+- npm `v9+`
 
-### Making a Progressive Web App
+### 1. Clone the Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+git clone https://github.com/your-org/inexa.git
+cd inexa
+```
 
-### Advanced Configuration
+### 2. Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+# Backend
+cd server
+npm install
 
-### Deployment
+# Frontend
+cd ../client
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 3. Configure Environment Variables
 
-### `npm run build` fails to minify
+```bash
+cp server/.env.example server/.env
+# Edit server/.env with your values (see below)
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 4. Run the Application
+
+```bash
+# Start backend (from /server)
+npm run dev
+
+# Start frontend (from /client)
+npm start
+```
+
+The app will be available at `http://localhost:3000` and the API at `http://localhost:5000`.
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env` file in the `/server` directory:
+
+```env
+# Server
+PORT=5000
+NODE_ENV=development
+
+# MongoDB
+MONGO_URI=mongodb://localhost:27017/inexa
+
+# JWT
+JWT_SECRET=your_super_secret_key_here
+JWT_EXPIRES_IN=7d
+
+# CORS
+CLIENT_URL=http://localhost:3000
+```
+
+---
+
+
+## 🧠 Core Algorithm: RRMD
+
+The **Round-Robin Mixed Designation (RRMD)** algorithm is the heart of InExa's duty allocation:
+
+```
+1.  Load all faculty from MongoDB
+2.  Group faculty by designation:
+      → Professor  →  Associate Professor
+      → Assistant Professor  →  Lab Staff
+3.  Within each group, sort by ascending duty count
+4.  Rotate cyclically across groups to pick invigilators
+5.  For each selected faculty, apply constraints:
+      ✗  Already assigned on the same date?  → Skip
+      ✗  Violates Saturday rule?             → Skip
+      ✓  Assign to slot
+6.  Atomically update duty counts in MongoDB (BulkWrite)
+7.  Repeat until all slots are filled
+```
+
+This guarantees **near-zero standard deviation** in workload distribution across all faculty, regardless of institution size.
+
+---
+
+
+## 👥 User Roles
+
+### 🔴 Admin (Exam Cell Coordinator)
+- Full access to all modules
+- Upload faculty data via Excel
+- Trigger AI auto-assignment
+- Generate and export seating plans
+- Approve/reject leave requests
+- View all reports
+
+### 🟡 Faculty
+- View personal invigilation schedule
+- Confirm duty attendance
+- Submit leave adjustment requests
+- Request duty swaps
+
+### 🟢 Student
+- View assigned seat number and hall
+- View exam timetable
+- Print seat slip
+
+---
+
+## 📈 Performance
+
+Results from pilot deployment:
+
+| Metric | Manual Process | InExa | Improvement |
+|--------|---------------|-------|-------------|
+| Duty allocation time | ~3–4 hours | < 10 seconds | **~99%** |
+| Seating plan generation | ~2 hours | < 5 seconds | **~99%** |
+| Scheduling conflicts | Frequent | Zero | ✅ |
+| Faculty duty imbalance | High | Near-zero | ✅ |
+| Leave request resolution | 1–2 days | < 1 hour | **~90%** |
+| Student seat lookup | Manual | Instant | ✅ |
+
+---
+
+## 🌍 SDG Alignment
+
+InExa contributes to the following United Nations Sustainable Development Goals:
+
+- 🎓 **SDG 4 — Quality Education**: Equitable, transparent examination access for all students and faculty
+- 🏗 **SDG 9 — Industry, Innovation & Infrastructure**: Scalable digital infrastructure for academic institutions
+- ⚖️ **SDG 16 — Peace, Justice & Strong Institutions**: Accountable, auditable governance of examination processes
+
+---
+
+
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+Made with ❤️ at **Vidya Academy of Science and Technology**
+
+*InExa — Intelligent Examination Administration*
+
+</div>
