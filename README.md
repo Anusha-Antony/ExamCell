@@ -49,15 +49,15 @@
 ```
 ┌──────────────────────────────────────────────────┐
 │                  FRONTEND                        │
-│   React.js  ·  Tailwind CSS  ·  React Router    │
-│   Axios  ·  React Hooks                         │
+│   React.js  ·  Tailwind CSS  ·  React Router     │
+│   Axios  ·  React Hooks                          │
 ├──────────────────────────────────────────────────┤
 │                  BACKEND                         │
-│   Node.js  ·  Express.js  ·  JWT  ·  bcrypt     │
-│   Multer  ·  XLSX  ·  CORS                      │
+│   Node.js  ·  Express.js  ·  JWT  ·  bcrypt      │
+│   Multer  ·  XLSX  ·  CORS                       │
 ├──────────────────────────────────────────────────┤
 │                  DATABASE                        │
-│   MongoDB  ·  Mongoose ODM                      │
+│   MongoDB  ·  Mongoose ODM                       │
 └──────────────────────────────────────────────────┘
 ```
 
@@ -67,14 +67,14 @@
 
 ```
                         ┌─────────────────────┐
-                        │    React Frontend    │
-                        │  (Tailwind CSS UI)   │
+                        │    React Frontend   │
+                        │  (Tailwind CSS UI)  │
                         └──────────┬──────────┘
                                    │ HTTP / Axios
                         ┌──────────▼──────────┐
                         │   Express.js API    │
                         │  ┌───────────────┐  │
-                        │  │  JWT Middleware│  │
+                        │  │ JWT Middleware│  │
                         │  │  RBAC Layer   │  │
                         │  └───────────────┘  │
                         │  ┌───────────────┐  │
