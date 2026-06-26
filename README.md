@@ -186,6 +186,31 @@ The **Round-Robin Mixed Designation (RRMD)** algorithm is the heart of InExa's d
 This guarantees **near-zero standard deviation** in workload distribution across all faculty, regardless of institution size.
 
 ---
+## Project Screenshots
+
+![Screenshot 1](index.png)
+
+![Screenshot 2](login.png)
+
+![Screenshot 3](stu_reg.png)
+
+![Screenshot 4](admin_dash.png)
+
+![Screenshot 5](fy_mng.png)
+
+![Screenshot 6](inv_duties.png)
+
+![Screenshot 7](fy_prof.png)
+
+![Screenshot 8](invig_duty.png)
+
+![Screenshot 9](leave_view.png)
+
+![Screenshot 10](seatin_view.png)
+
+![Screenshot 11](stu_prof.png)
+
+![Screenshot 12](stu_seat.png)
 
 
 ## 👥 User Roles
